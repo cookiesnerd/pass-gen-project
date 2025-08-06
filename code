@@ -32,7 +32,25 @@ def generate_password(min_lengh, numbers=True, special_char=True):
             meets_requiarments = has_number
         if special_char:
             meets_requiarments = meets_requiarments and has_special
+    print(pwd)
     return pwd
         
+print("WElcome to a basic pass gen!")
+while True:
+    let = input("Whats the min lenth: ")
+    try:
+        int(let)
+    except:
+        print("Coundlt read the number!")
+    num = input("do u want numbers in it (y/n): ")
+    spec = input("do u want specials in it (y/n): ")
+    break
+if num == "y".lower():
+    if spec == "y".lower():
+        generate_password(int(let),True,True)
+    else:
+        generate_password(int(let),True,False)
+else:
+    generate_password(int(let),False,False)
+    print("This isnt gonna be secure enough right?")
 
-print(generate_password(10))
