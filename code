@@ -1,6 +1,7 @@
 import random
 import string
-
+allowed_num = False
+allowed_spec = False
 
 def generate_password(min_lengh, numbers=True, special_char=True):
     letters = string.ascii_letters
@@ -46,11 +47,10 @@ while True:
     spec = input("do u want specials in it (y/n): ")
     break
 if num == "y".lower():
-    if spec == "y".lower():
-        generate_password(int(let),True,True)
-    else:
-        generate_password(int(let),True,False)
-else:
-    generate_password(int(let),False,False)
-    print("This isnt gonna be secure enough right?")
+    allowed_num = True
+
+if spec == "y".lower():
+    allowed_spec = True
+
+generate_password(int(let), allowed_num, allowed_spec)
 
