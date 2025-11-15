@@ -43,14 +43,15 @@ while True:
         int(let)
     except:
         print("Coundlt read the number!")
+        print("Default set to 12!")
+        let = 12
     num = input("do u want numbers in it (y/n): ")
     spec = input("do u want specials in it (y/n): ")
     break
-if num == "y".lower():
+if num in ["y","Y","yes"]:
     allowed_num = True
 
-if spec == "y".lower():
+if spec == ["y","Y","yes"]:
     allowed_spec = True
 
 generate_password(int(let), allowed_num, allowed_spec)
-
